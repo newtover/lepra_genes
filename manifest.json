@@ -1,0 +1,44 @@
+{
+
+  "manifest_version": 2,
+  "name": "Lepra Genes",
+  "version": "1.0",
+  "description": "Some description",
+  "homepage_url": "https://github.com/newtover/lepra_genes",
+  "icons": {
+    "26": "icons/rabbit.png",
+    "48": "icons/rabbit48.png"
+  },
+
+  "permissions": [
+    "activeTab",
+//    "https://leprosorium.ru/my/inbox/",
+    "https://leprosorium.ru/my/inbox/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/rabbit.png",
+    "default_title": "Lepra Genes",
+    "default_popup": "popup/main_popup.html"
+  },
+
+  "web_accessible_resources": [
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://leprosorium.ru/my/inbox/*/*"],
+      "js": [
+        "cs/get_pathname.js"
+      ]
+    },
+    {
+      "matches": ["https://leprosorium.ru/my/inbox/"],
+      "js": [
+        "cs/get_pathname.js",
+        "cs/list_inboxes.js"
+      ]
+    }
+  ]
+}
+
