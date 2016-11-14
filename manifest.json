@@ -29,7 +29,8 @@
     {
       "matches": ["https://leprosorium.ru/my/inbox/*/*"],
       "js": [
-        "cs/get_pathname.js"
+        "cs/get_pathname.js",
+        "cs/specific_inbox.js"
       ]
     },
     {
